@@ -36,18 +36,28 @@ public class Solution
 
     public static Map<String, Integer> countWords(ArrayList<String> list)
     {
-        HashMap<String, Integer> result = new HashMap<String, Integer>();
+        HashMap<String, Integer> hm = new HashMap<String, Integer>();
         for (String str : list) {
-            if (result.get(str)==null) {
-                result.put(str, 0);
+             hm.put(str, 0);
+        }
+
+        for (Map.Entry<String, Integer> entry : hm.entrySet()) {
+
+                for (String str : list) {
+                if (entry.getKey().equals(str))
+                {
+                    hm.put(entry.getKey(), entry.getValue() + 1);
+
+                }
             }
         }
+
 
 
         //напишите тут ваш код
 
 
-        return result;
+        return hm;
     }
 
 }

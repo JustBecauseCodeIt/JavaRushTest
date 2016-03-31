@@ -2,6 +2,7 @@ package com.javarush.test.level10.lesson11.bonus03;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /* Задача по алгоритмам
 Задача: ввести с клавиатуры 30 чисел. Вывести 10-е и 11-е минимальные числа.
@@ -36,5 +37,6 @@ public class Solution
     public static void sort(int[] array)
     {
         //напишите тут ваш код
+        Arrays.sort(array);
     }
 }

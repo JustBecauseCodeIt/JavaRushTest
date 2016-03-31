@@ -1,6 +1,9 @@
 package com.javarush.test.level09.lesson11.bonus02;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /* Нужно добавить в программу новую функциональность
 Задача: Программа вводит два имени файла. И копирует первый файл на место, заданное вторым именем.
@@ -16,6 +19,13 @@ public class Solution
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         String sourceFileName = reader.readLine();
+        Path path = Paths.get(sourceFileName);
+        if (Files.notExists(path))
+        {
+            System.out.println("Файл не существует.");
+            sourceFileName = reader.readLine();
+        }
+
         String destinationFileName = reader.readLine();
 
         FileInputStream fileInputStream = new FileInputStream(sourceFileName);
