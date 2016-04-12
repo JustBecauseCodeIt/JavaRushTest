@@ -13,14 +13,14 @@ public class Solution
 {
     public static void main(String[] args)
     {
-/*
+
         Swimable animal = new Orca();
         animal.swim();
         animal = new Whale();
         animal.swim();
         animal = new Otter();
         animal.swim();
-*/
+
     }
 
     public static void test(Swimable animal)
@@ -58,17 +58,30 @@ public class Solution
     {
         @Override
         Swimable getCurrentAnimal() {
-            return null;
+            return (Swimable) new Orca();
         }
     }
 
-    static class Whale
+    static class Whale extends OceanAnimal
     {
 
+        @Override
+        Swimable getCurrentAnimal() {
+            return new Whale();
+        }
     }
 
-    static class Otter
+    static class Otter implements Swimable, Walkable
     {
 
+        @Override
+        public void swim() {
+
+        }
+
+        @Override
+        public void walk() {
+
+        }
     }
 }
