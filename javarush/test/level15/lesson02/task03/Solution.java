@@ -25,7 +25,7 @@ public class Solution {
 
         public void printlnDesire() {
             //add your code here
-            System.out.println(WANT_STRING + FERRARY_NAME);
+            System.out.println(Constants.WANT_STRING + Constants.FERRARY_NAME);
         }
     }
 
@@ -33,23 +33,23 @@ public class Solution {
 
         public void printlnDesire() {
             //add your code here
-            System.out.println(WANT_STRING + LANOS_NAME);
+            System.out.println(Constants.WANT_STRING + Constants.LANOS_NAME);
         }
     }
 
-    public static class LuxuriousCar extends Constants {
+    public static class LuxuriousCar  {
 
-         void printlnDesire() {
+         protected void printlnDesire() {
             //add your code here
-            System.out.println(WANT_STRING + LUXURIOUS_CAR);
+            System.out.println(Constants.WANT_STRING + Constants.LUXURIOUS_CAR);
         }
     }
 
-    public static class CheapCar extends Constants {
+    public static class CheapCar  {
 
         void printlnDesire() {
             //add your code here
-            System.out.println(WANT_STRING + CHEAP_CAR);
+            System.out.println(Constants.WANT_STRING + Constants.CHEAP_CAR);
         }
     }
 
