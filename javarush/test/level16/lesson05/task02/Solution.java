@@ -17,13 +17,23 @@ public class Solution {
 
     public static void main(String[] args) throws InterruptedException {
         List<Horse> horses = prepareHorsesAndStart();
-        while (calculateHorsesFinished(horses) != countHorses) {
+     while (calculateHorsesFinished(horses) != countHorses) {
         }
+        //calculateHorsesFinished(horses);
     }
 
     public static int calculateHorsesFinished(List<Horse> horses) throws InterruptedException {
         int countFinished = 0;
         //add your implementation here - добавь свою реалзацию тут
+        //countFinished = horses.size();
+        for (int i = 0; i < horses.size(); i++){
+            if (!horses.get(i).isFinished())
+            {
+                System.out.println("Waiting for " + horses.get(i).getName());
+                horses.get(i).join();
+            }
+            countFinished++;
+        }
         return countFinished;
     }
 
