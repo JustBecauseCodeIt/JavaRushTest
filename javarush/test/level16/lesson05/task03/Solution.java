@@ -12,12 +12,15 @@ public class Solution {
 
     public static void main(String[] args) throws InterruptedException {
         Politic ivanov = new Politic("Иванов");
+        ivanov.join();
         Politic petrov = new Politic("Петров");
         Politic sidorov = new Politic("Сидоров");
-        Thread thread = new Thread(ivanov);
-        thread.start();
-        //thread.join();
-        thread.join();
+        //Thread thread = new Thread(ivanov);
+        //Thread thread2 = new Thread(ivanov);
+        //thread.start();
+        //thread2.start();
+        //thread.join(Thread.MIN_PRIORITY);
+        //thread2.join(Thread.MIN_PRIORITY);
 
         while (ivanov.getCountSpeaches() + petrov.getCountSpeaches() + sidorov.getCountSpeaches() < totalCountSpeeches) {
         }
