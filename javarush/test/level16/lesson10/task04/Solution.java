@@ -7,7 +7,7 @@ package com.javarush.test.level16.lesson10.task04;
 */
 
 public class Solution {
-    public static boolean isCancel = false;
+    public static volatile boolean isCancel = false;
     public static void main(String[] args) throws InterruptedException {
        // TestThread tt = new TestThread();
         Thread t = new Thread(new TestThread());

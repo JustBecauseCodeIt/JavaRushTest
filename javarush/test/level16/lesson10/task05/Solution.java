@@ -3,6 +3,7 @@ package com.javarush.test.level16.lesson10.task05;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /* Один для всех, все - для одного
 1. Разберись, как работает программа.
 1.1. Обрати внимание, что объект Water - один для всех нитей.
@@ -25,6 +26,10 @@ public class Solution {
 
     public static void ourInterruptMethod() {
         //add your code here - добавь код тут
+       // threads.get(0).interrupt();
+        for (int i = 0; i < countThreads; i++) {
+            threads.get(i).interrupt();
+        }
     }
 
     private static void initThreadsAndStart() {
@@ -47,8 +52,8 @@ public class Solution {
 
         public void run() {
             //fix 2 variables - исправь 2 переменных
-            boolean isCurrentThreadInterrupted = false;
-            String threadName = "";
+            boolean isCurrentThreadInterrupted = Thread.currentThread().isInterrupted();
+            String threadName = Thread.currentThread().getName();
 
             try {
                 while (!isCurrentThreadInterrupted) {
