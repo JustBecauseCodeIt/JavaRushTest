@@ -7,40 +7,31 @@ package com.javarush.test.level16.lesson10.task04;
 */
 
 public class Solution {
-    public static volatile boolean isCancel = false;
+    public static boolean cancell=false;
     public static void main(String[] args) throws InterruptedException {
-       // TestThread tt = new TestThread();
         Thread t = new Thread(new TestThread());
         t.start();
-
         Thread.sleep(3000);
-
-        Solution.isCancel=true;
-      //  t.join();
         ourInterruptMethod();
-
-       // Solution.isCancel=false;
 
     }
 
     public static void ourInterruptMethod() {
-   //    Solution.isCancel=false;
+        TestThread.work = false;
 
     }
 
     public static class TestThread implements Runnable {
-
-
-        @Override
+        public static boolean work = true;
         public void run() {
-            while(!Solution.isCancel) {
+            while(work) {
                 try {
                     System.out.println("he-he");
                     Thread.sleep(500);
-                }
-                catch (InterruptedException e) {
+                } catch (InterruptedException e) {
                 }
             }
+
         }
     }
 }
